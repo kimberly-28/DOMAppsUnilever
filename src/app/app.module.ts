@@ -26,6 +26,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { EmployeeDetailComponent } from './main/employee-detail/employee-detail.component';
+import { DialogEmployeeDetailComponent } from './main/employee-detail/dialog-employee-detail/dialog-employee-detail.component';
 
 
 
@@ -40,11 +42,14 @@ const appRoutes: Routes = [
     declarations: [
         AppComponent,
         DashboardComponent,
-        DialogDetailsUserComponent
+        DialogDetailsUserComponent,
+        EmployeeDetailComponent,
+        DialogEmployeeDetailComponent
     ],
 
     entryComponents: [
-    DialogDetailsUserComponent
+    DialogDetailsUserComponent,
+    DialogEmployeeDetailComponent,
     ],
 
     imports     : [

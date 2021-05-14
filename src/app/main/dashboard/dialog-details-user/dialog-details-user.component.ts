@@ -6,7 +6,6 @@ export interface PeriodicElement {
   entrada: string;
   salida: string;
   ubicacion: string;
- 
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
