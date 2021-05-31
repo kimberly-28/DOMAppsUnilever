@@ -26,10 +26,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { EmployeeDetailComponent } from './main/employee-detail/employee-detail.component';
-import { DialogEmployeeDetailComponent } from './main/employee-detail/dialog-employee-detail/dialog-employee-detail.component';
-
-
+import { AgenciesComponent } from './main/agencies/agencies.component';
+import { ChartsModule } from 'ng2-charts';
+import { MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenavModule } from '@angular/material/sidenav';
+import { NgClass } from '@angular/common';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { EmployeeComponent } from './main/employee/employee.component';
 
 const appRoutes: Routes = [
     {
@@ -43,13 +46,12 @@ const appRoutes: Routes = [
         AppComponent,
         DashboardComponent,
         DialogDetailsUserComponent,
-        EmployeeDetailComponent,
-        DialogEmployeeDetailComponent
+        AgenciesComponent,
+        EmployeeComponent,
     ],
 
     entryComponents: [
     DialogDetailsUserComponent,
-    DialogEmployeeDetailComponent,
     ],
 
     imports     : [
@@ -60,10 +62,8 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
         TranslateModule.forRoot(),
 
-        // Material moment date module
-        MatMomentDateModule,
-
         // Material
+        MatMomentDateModule,
         MatButtonModule,
         MatIconModule,
         MatCardModule,
@@ -74,21 +74,29 @@ const appRoutes: Routes = [
         MatFormFieldModule,
         MatOptionModule,
         MatSelectModule,
-
+        MatCardModule,
+        MatFormFieldModule,
+        MatPaginatorModule,
+        
         // Fuse modules
         FuseModule.forRoot(fuseConfig),
         FuseProgressBarModule,
         FuseSharedModule,
         FuseSidebarModule,
         FuseThemeOptionsModule,
-
         // App modules
         LayoutModule,
+
+        //Chart
+        ChartsModule,
     ],
     bootstrap   : [
-        AppComponent
-    ]
+        AppComponent,
+        
+    ],
+
 })
+
 export class AppModule
-{
+{ 
 }

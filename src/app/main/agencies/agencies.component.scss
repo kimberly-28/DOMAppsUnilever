@@ -1,0 +1,80 @@
+mat-card-header {
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 5%;
+}
+
+h1 {
+    text-align: start;
+    display: flex;
+    width: 12vw;
+    white-space: wrap;
+}
+
+.h1 {
+    text-align: start;
+    display: flex;
+    white-space: wrap;
+    text-align: start;
+    width: 15vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+// .badge2 {
+//     height: 20%;
+//     font-size: 15px;
+//     border-radius: 50%;
+//     background-color: #a53737;
+//     color: #ffffff;
+//     text-align: center;
+//     width: 5vw;
+// }
+// .badge3 {
+//     height: 20%;
+//     font-size: 15px;
+//     border-radius: 50%;
+//     background-color: #a53737;
+//     color: #ffffff;
+//     text-align: center;
+//     width: 5vw;
+// }
+// .badge1 {
+//     font-size: 15px;
+//     border-radius: 50%;
+//     background-color: #a53737;
+//     color: #ffffff;
+//     text-align: center;
+//     width: 5vw;
+// }
+table {
+    width: 100%;
+    text-align: center;
+}
+
+th {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    background: chocolate;
+}
+
+.driver {
+    border-radius: 50%;
+}
+
+img {
+    width: 25%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+mat-expansion-panel {
+    margin-bottom: 5%;
+}

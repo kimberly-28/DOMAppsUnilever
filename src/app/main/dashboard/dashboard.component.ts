@@ -1,50 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { StringChain } from 'lodash';
-import { DialogEmployeeDetailComponent } from '../employee-detail/dialog-employee-detail/dialog-employee-detail.component';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { BaseChartDirective, Color, Label, MultiDataSet } from 'ng2-charts';
 import { DialogDetailsUserComponent } from './dialog-details-user/dialog-details-user.component';
+import * as pluginDataLabels from 'ng2-charts';
+import Swal from 'sweetalert2'
 
 export interface PeriodicElement {
-  usuario?: string;
-  alerta?: string
-  velocidad?: string;
-  ubicacion?: string;
-  fecha?: string;
-  entrada?: string;
-  salida?: string;
-  detalle?: string;
-  ingreso?: string; 
-  actividad?: string;
+  agencia?: string;
+  incidencia?: number;
+  jornada?: number;
+  app?: string;
+  imageUrl?: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { usuario: 'Juan Gomez', alerta: 'Detección de Llamada', velocidad: '30 km/h', ubicacion: 'Eje Central', fecha: '14/05/2021', detalle: 'Uso de: Llamada. Duración: 40 min. Número: 442 458 63 25 '},
-  { usuario: 'José Perez', alerta: 'Detección de App', velocidad: '35 km/h',ubicacion: 'Eje Central', fecha: '14/05/2021', detalle: 'Uso de: Instagram. Duración: 40 min.'},
-   { usuario: 'Alberto González', alerta: 'Detección de Llamada', velocidad: '45 km/h',ubicacion: 'Eje Central', fecha: '14/05/2021', detalle: 'Uso de: Llamada. Duración: 30 min. Número: 442 898 54 74 '},
-   { usuario: 'Julio Aparicio', alerta: 'Detección de velocidad', velocidad: '145 km/h',ubicacion: 'Eje Central', fecha: '14/05/2021', detalle: 'Exceso de Velocidad'},
+const ELEMENT_DATA1: PeriodicElement[] = [
+  {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
+  {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
+  {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
+  {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
 ];
-
-const ELEMENT_DATA2: PeriodicElement[] = [
-  { usuario: 'Juan Gomez', entrada: '8:00 am',  ubicacion: 'Eje Central' },
-  { usuario: 'José Perez', entrada: '8:30 am', ubicacion: 'Eje Central', },
-  // { usuario: 'Alberto González', entrada: '8:00 am', ubicacion: 'Eje Central', },
-  // { usuario: 'Julio Aparicio', entrada: '8:00 am', ubicacion: 'Eje Central', },
-];
-
-const ELEMENT_DATA3: PeriodicElement[] = [
-  { usuario: 'Juan Gomez', salida: '7:00 pm',  ubicacion: 'Eje Central' },
-  { usuario: 'José Perez', salida: '7:00 pm', ubicacion: 'Eje Central', },
-  // { usuario: 'Alberto González', salida: '7:00 pm', ubicacion: 'Eje Central', },
-  // { usuario: 'Julio Aparicio', salida: '7:00 pm', ubicacion: 'Eje Central', },
-];
-
-const ELEMENT_DATA4: PeriodicElement[] = [
-  { usuario: 'Juan Gomez', ingreso: '8:00 am',  actividad: 'Uso de: Instagram. Duración: 45 min',  velocidad: '140 km/h', },
-  { usuario: 'José Perez', ingreso: '8:30 am', actividad: 'Sin actividad' , velocidad: '90 km/h',},
-   { usuario: 'Alberto González', ingreso: '8:00 am', actividad: 'Uso de: Llamada. Duración: 20 min',  velocidad: '130 km/h',},
-   { usuario: 'Julio Aparicio', ingreso: '8:00 am', actividad: 'Sin actividad',  velocidad: '85 km/h',},
-];
-
 
 @Component({
   selector: 'app-dashboard',
@@ -53,32 +28,81 @@ const ELEMENT_DATA4: PeriodicElement[] = [
 })
 export class DashboardComponent implements OnInit {
 
-    panelOpenState = false;
+  displayedColumns1: string[] = ['agencia', 'incidencia', 'jornada', 'app'];
+  dataSource1 = ELEMENT_DATA1;
 
-  displayedColumns: string[] = ['usuario', 'alerta', 'velocidad', 'ubicacion', 'fecha', 'detalle'];
-  dataSource = ELEMENT_DATA;
-
-  displayedColumns2: string[] = ['usuario', 'entrada', 'ubicacion'];
-  dataSource2 = ELEMENT_DATA2;
-
-  displayedColumns3: string[] = ['usuario', 'salida', 'ubicacion'];
-  dataSource3 = ELEMENT_DATA3;
-
-  displayedColumns4: string[] = ['usuario', 'ingreso', 'actividad', 'velocidad'];
-  dataSource4 = ELEMENT_DATA4;
-
+    
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openDialogDetailsUser()
-  {
+  openDialogDetailsUser() {
     this.dialog.open(DialogDetailsUserComponent);
   }
 
-  openDialogEmployeeDetail() {
-    this.dialog.open(DialogEmployeeDetailComponent);
-  }
+public lineChartData: ChartDataSets[] = [
+  
+  { data: [ 3 , 0, 2, 5, 9, 2, 4], label: 'Cantidad de Incidencias'  },
 
+];
+
+public lineChartData1: ChartDataSets[] = [
+
+  { data: [ 3, 4, 2, 5, 0, 2, 6], label: 'Check Out' },
+];
+
+public lineChartData2: ChartDataSets[] = [
+
+  { data: [ 3, 4, 2, 5, 9, 2, 6], label: 'Total Incidencias en el día' },
+
+
+];
+
+public lineChartLabels: Label[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo' ];
+
+public lineChartColors: Color[] = [
+
+  { 
+    borderColor: 'rgba(63, 207, 65)',
+    pointBackgroundColor: 'rgba(63, 207, 65)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+  }
+];
+
+public lineChartType: ChartType = 'line';
+
+///BAR CHART
+
+@ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
+
+
+public barChartLabels: Label[] = ['7-9', '9-11', '11-13', '13-15', '15-17', '17-19:30', 'Después 19:30'];
+public barChartType: ChartType = 'bar';
+public barChartLegend = true;
+public barChartPlugins = [pluginDataLabels];
+
+public barChartData: ChartDataSets[] = [
+  { data: [65, 80, 81, 59,  56, 55, 40, 20], label: 'Horario de uso de Apps' },
+];
+
+// DOUGHNUT CHART
+public doughnutChartLabels: Label[] = ['Disciplina', 'Cumplimiento de Jornada', 'Incumplimiento de Jornada'];
+public doughnutChartData: MultiDataSet = [
+  [43 , 38, 19],
+];
+
+public doughnutChartType: ChartType = 'doughnut';
+
+// events
+public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  console.log(event, active);
 }
+
+public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
+  console.log(event, active);
+}
+}
+

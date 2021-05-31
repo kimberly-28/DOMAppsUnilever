@@ -3,15 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { DashboardComponent } from '../main/dashboard/dashboard.component';
-import { EmployeeDetailComponent } from '../main/employee-detail/employee-detail.component';
-
+import { AgenciesComponent } from '../main/agencies/agencies.component';
+import { EmployeeComponent } from '../main/employee/employee.component';
 
 const routes: Routes = [
     {
         path:'dashboard', component: DashboardComponent
     },
     {
-        path:'employee', component: EmployeeDetailComponent
+        path:'agencies', component: AgenciesComponent
+    },
+    {
+        path:'employee', component: EmployeeComponent
     }
 ];
 

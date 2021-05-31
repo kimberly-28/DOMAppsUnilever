@@ -14,8 +14,15 @@ export const navigation: FuseNavigation[] = [
                 url      : '/dashboard',
             },
             {
+                id       : 'agencies',
+                title    : 'Agencias',
+                type     : 'item',
+                icon     : 'perm_identity', 
+                url      : '/agencies',
+            },
+            {
                 id       : 'employee',
-                title    : 'Usuarios',
+                title    : 'Employee',
                 type     : 'item',
                 icon     : 'perm_identity', 
                 url      : '/employee',
