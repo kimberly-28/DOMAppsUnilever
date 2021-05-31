@@ -24,8 +24,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 const ELEMENT_DATA1: PeriodicElement[] = [
   {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
+  {imageUrl: "./assets/images/avatars/Velazquez.jpg", incidencia: 5, jornada: 23, app: '3'},
   {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
-  {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
+  {imageUrl: "./assets/images/avatars/Velazquez.jpg", incidencia: 5, jornada: 23, app: '3'},
   {imageUrl: "./assets/images/avatars/garry.jpg", incidencia: 5, jornada: 23, app: '3'},
 ];
 

@@ -1,4 +1,4 @@
-<mat-form-field style="width: 20%;">
+<!-- <mat-form-field style="width: 20%;">
     <mat-label class=" font-size-20 font-weight-300 "> <b> Agencias</b></mat-label>
     <mat-select [formControl]="toppings " multiple style="padding: 2%">
         <mat-select-trigger style="width: 100%; ">
@@ -8,11 +8,9 @@
         </mat-select-trigger>
         <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
     </mat-select>
-</mat-form-field>
+</mat-form-field> -->
 
-<div style="width: 100%; height: 100%;" fxLayoutAlign="center center">
-
-    <div style="width: 100%; height: 100%;">
+<!-- <div style="width: 100%; height: 100%;">
 
         <div style="margin-bottom: 5%;">
             <mat-accordion>
@@ -466,7 +464,7 @@
         </div>
 
         <!-- TABLE -->
-        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="agencia">
                 <th mat-header-cell *matHeaderCellDef> Agencia </th>
@@ -494,8 +492,8 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table> -->
 
-        <!-- ULTIMO CARD -->
-        <!-- <mat-card style="width: auto; background: #d1d6db; margin: 1%; ">
+<!-- ULTIMO CARD -->
+<!-- <mat-card style="width: auto; background: #d1d6db; margin: 1%; ">
             <mat-card-header fxLayoutAlign="space-between center " style="color: black; background-color: #e3f3fd; ">
                 <b class=" font-size-30 font-weight-300 ">Agencia Tláhuac</b>
                 <button mat-button mat-raised-button style="background: #f5f6f7; margin: 1%; " (click)="openDialogDetailsUser() ">Detalle </button>
@@ -559,48 +557,47 @@
             </div>
         </mat-card> -->
 
-    </div>
 
-    <div style="width: 100%; height: 100%; margin: 2%;">
+<div style="width: 100%; height: 100%; margin-top: 5%;" fxLayoutAlign="center center">
 
-        <mat-card style="width: 100%; height: auto; margin-bottom: 10%;">
+    <mat-card style="width: 100%; height: auto; margin-bottom: 10%;">
 
-            <h1 style="width: 100%;" fxLayoutAlign="center center">Conductores Con incidencias</h1>
+        <h1 style="width: 100%;" fxLayoutAlign="center center">Conductores Con incidencias</h1>
 
-            <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8" style="width: 50%; margin-left: 25%;">
 
-                <ng-container matColumnDef="imageUrl">
-                    <th mat-header-cell *matHeaderCellDef> Conductor </th>
-                    <td mat-cell *matCellDef="let element"> <img class="driver" [src]="element.imageUrl" /> </td>
-                </ng-container>
+            <ng-container matColumnDef="imageUrl">
+                <th mat-header-cell *matHeaderCellDef> Conductor </th>
+                <td mat-cell *matCellDef="let element"> <img class="driver" [src]="element.imageUrl" /> </td>
+            </ng-container>
 
-                <ng-container matColumnDef="incidencia">
-                    <th mat-header-cell *matHeaderCellDef> Incidencias </th>
-                    <td mat-cell *matCellDef="let element">
-                        <span matBadge="{{element.incidencia}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="warn"> </span>
-                    </td>
-                </ng-container>
+            <ng-container matColumnDef="incidencia">
+                <th mat-header-cell *matHeaderCellDef> Incidencias </th>
+                <td mat-cell *matCellDef="let element">
+                    <span matBadge="{{element.incidencia}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="warn"> </span>
+                </td>
+            </ng-container>
 
-                <ng-container matColumnDef="jornada">
-                    <th mat-header-cell *matHeaderCellDef> Jornada Laboral </th>
-                    <td mat-cell *matCellDef="let element" class="badge2"> <span matBadge="{{element.jornada}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="primary"> </span> </td>
-                </ng-container>
+            <ng-container matColumnDef="jornada">
+                <th mat-header-cell *matHeaderCellDef> Jornada Laboral </th>
+                <td mat-cell *matCellDef="let element" class="badge2"> <span matBadge="{{element.jornada}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="primary"> </span> </td>
+            </ng-container>
 
-                <ng-container matColumnDef="app">
-                    <th mat-header-cell *matHeaderCellDef> Uso de App No Autorizadas </th>
-                    <td mat-cell *matCellDef="let element" class="badge3"><span matBadge=" {{element.app}} " matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent"> </span></td>
-                </ng-container>
+            <ng-container matColumnDef="app">
+                <th mat-header-cell *matHeaderCellDef> Uso de App No Autorizadas </th>
+                <td mat-cell *matCellDef="let element" class="badge3"><span matBadge=" {{element.app}} " matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent"> </span></td>
+            </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
-            </table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+        </table>
 
-            <mat-paginator fxLayoutAlign="center center" style="width: 100%; height: 100%;" [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
-            </mat-paginator>
+        <mat-paginator fxLayoutAlign="center center" style="width: 100%; height: 100%;" [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
 
-        </mat-card>
+    </mat-card>
 
-        <!-- <mat-card style="width: 100%; height: auto; margin-bottom: 2%;">
+    <!-- <mat-card style="width: 100%; height: auto; margin-bottom: 2%;">
 
             <h1 style="width: 100%;" fxLayoutAlign="center center">Conductores Sin incidencias</h1>
 
@@ -633,8 +630,8 @@
             </table>
         </mat-card> -->
 
-    </div>
 </div>
+
 
 <!-- <div fxLayoutAlign=" center center "> -->
 <!-- <mat-card style="width: 100%; background: #d1d6db; margin: 1%; ">
