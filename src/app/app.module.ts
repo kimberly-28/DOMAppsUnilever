@@ -21,18 +21,22 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatBadgeModule} from '@angular/material/badge';
 import { DialogDetailsUserComponent } from './main/dashboard/dialog-details-user/dialog-details-user.component';
-import {  MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatOptionModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { AgenciesComponent } from './main/agencies/agencies.component';
 import { ChartsModule } from 'ng2-charts';
-import { MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenavModule } from '@angular/material/sidenav';
-import { NgClass } from '@angular/common';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { EmployeeComponent } from './main/employee/employee.component';
+import { MatInput, MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CoreModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const appRoutes: Routes = [
     {
@@ -77,6 +81,18 @@ const appRoutes: Routes = [
         MatCardModule,
         MatFormFieldModule,
         MatPaginatorModule,
+        MatSidenavModule,
+        MatInputModule,
+        MatListModule,
+        MatProgressBarModule,
+        CoreModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
+        FormsModule,
+        ReactiveFormsModule,
+        
+      
+        
         
         // Fuse modules
         FuseModule.forRoot(fuseConfig),
@@ -90,11 +106,20 @@ const appRoutes: Routes = [
         //Chart
         ChartsModule,
     ],
+
+    exports:[
+        MatDatepickerModule,
+        MatNativeDateModule
+      ],
+      providers: [
+        MatDatepickerModule,
+        MatNativeDateModule,
+      ],
+
     bootstrap   : [
         AppComponent,
         
     ],
-
 })
 
 export class AppModule

@@ -52,7 +52,9 @@ export class AgenciesComponent implements OnInit {
 
   toppings = new FormControl();
 
-  toppingList: string[] = ['Agencia Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Coyoacán', 'Cuauhtémoc', 'Tomato'];
+  toppingList: string[] = ['Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Coyoacán', 'Cuauhtémoc', 'Tomato'];
+
+  toppingList1: string[] = ['NorOeste', 'NorOeste', 'Occidente', 'Oriente', 'CentroNorte', 'CentroSur', 'SurOeste', 'SurEste'];
 
 //// LINE CHART
 

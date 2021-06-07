@@ -43,23 +43,13 @@ export class DashboardComponent implements OnInit {
 
 public lineChartData: ChartDataSets[] = [
   
-  { data: [ 3 , 0, 2, 5, 9, 2, 4], label: 'Cantidad de Incidencias'  },
+  { data: [ 3 , 0, 2, 5, 9, 2, 4], label: 'Total Incidencias en el día'   },
 
 ];
 
-public lineChartData1: ChartDataSets[] = [
-
-  { data: [ 3, 4, 2, 5, 0, 2, 6], label: 'Check Out' },
-];
-
-public lineChartData2: ChartDataSets[] = [
-
-  { data: [ 3, 4, 2, 5, 9, 2, 6], label: 'Total Incidencias en el día' },
-
-
-];
 
 public lineChartLabels: Label[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo' ];
+
 
 public lineChartColors: Color[] = [
 

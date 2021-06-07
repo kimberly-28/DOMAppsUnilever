@@ -1,16 +1,17 @@
-<div style="width: 100%; height: 100%;">
+<div style="width: 100%; height: 100%; ">
 
-    <div style="width: 100%; margin-bottom: 2%;">
-        <mat-card>
+    <div style="width: 100%; margin-bottom: 2%; " fxLayoutAlign="center center">
+        <mat-card style="width: 100%; margin-bottom: 2%; margin: 2%;">
             <mat-card-header>
-                <h1>Uso de Apps No Autorizadas</h1>
+                <h1>Histórico de Incidencias</h1>
             </mat-card-header>
             <hr>
             <canvas width="550 " height="100 " baseChart [datasets]="lineChartData " [labels]="lineChartLabels " [colors]="lineChartColors " [chartType]="lineChartType "></canvas>
         </mat-card>
     </div>
 
-    <div fxLayoutAlign="space-around center ">
+    <div style="width: 100%; height: 100%;" fxLayoutAlign="space-around " style="margin: 2%;">
+
         <mat-card>
             <mat-card-header>
                 <h1>Jornada Laboral</h1>
@@ -30,40 +31,6 @@
                     <canvas width="700 " height="400 " baseChart [datasets]="barChartData" [labels]="barChartLabels" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
                     </canvas>
                 </div>
-            </mat-card>
-        </div>
-
-        <div>
-            <mat-card style="width: 100%; height: 40%; margin-bottom: 10%;">
-                <mat-card-content>
-                    <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
-
-                        <ng-container matColumnDef="imageUrl">
-                            <th mat-header-cell *matHeaderCellDef> Conductor </th>
-                            <td mat-cell *matCellDef="let element"> <img class="driver" [src]="element.imageUrl" /> </td>
-                        </ng-container>
-
-                        <ng-container matColumnDef="incidencia">
-                            <th mat-header-cell *matHeaderCellDef> Incidencias </th>
-                            <td mat-cell *matCellDef="let element">
-                                <span matBadge="{{element.incidencia}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="warn"> </span>
-                            </td>
-                        </ng-container>
-
-                        <ng-container matColumnDef="jornada">
-                            <th mat-header-cell *matHeaderCellDef> Jornada Laboral </th>
-                            <td mat-cell *matCellDef="let element" class="badge2"> <span matBadge="{{element.jornada}}" matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="primary"> </span> </td>
-                        </ng-container>
-
-                        <ng-container matColumnDef="app">
-                            <th mat-header-cell *matHeaderCellDef> Uso de App No Autorizadas </th>
-                            <td mat-cell *matCellDef="let element" class="badge3"><span matBadge=" {{element.app}} " matBadgeOverlap="false" matBadgeSize="medium" matBadgeColor="accent"> </span></td>
-                        </ng-container>
-
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
-                    </table>
-                </mat-card-content>
             </mat-card>
         </div>
     </div>

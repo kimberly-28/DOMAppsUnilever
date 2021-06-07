@@ -1,14 +1,15 @@
 mat-card-header {
     width: 100%;
-    height: 7vh;
+    height: auto;
     margin-bottom: 5%;
 }
 
 h1 {
-    text-align: start;
-    display: flex;
-    width: 12vw;
+    font-weight: 300;
+    text-align: center;
+    font-size: 30px;
     white-space: wrap;
+    margin: 1%;
 }
 
 .h1 {
@@ -16,43 +17,11 @@ h1 {
     display: flex;
     white-space: wrap;
     text-align: start;
-    width: 15vw;
+    width: 14vw;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-// .badge2 {
-//     height: 20%;
-//     font-size: 15px;
-//     border-radius: 50%;
-//     background-color: #a53737;
-//     color: #ffffff;
-//     text-align: center;
-//     width: 5vw;
-// }
-// .badge3 {
-//     height: 20%;
-//     font-size: 15px;
-//     border-radius: 50%;
-//     background-color: #a53737;
-//     color: #ffffff;
-//     text-align: center;
-//     width: 5vw;
-// }
-// .badge1 {
-//     font-size: 15px;
-//     border-radius: 50%;
-//     background-color: #a53737;
-//     color: #ffffff;
-//     text-align: center;
-//     width: 5vw;
-// }
 table {
     width: 100%;
     text-align: center;

@@ -1,35 +1,51 @@
-<div style="width: 100%;">
-    <div fxLayoutAlign="space-around center">
-        <mat-card style=" margin-bottom: 2%; width: 100%; height: 50%;">
-            <mat-card-header>
-                <h1>Uso de Apps No Autorizadas</h1>
-            </mat-card-header>
-            <hr>
-            <canvas width="550" height="100" baseChart [datasets]="lineChartData " [labels]="lineChartLabels " [chartType]="lineChartType "></canvas>
-        </mat-card>
+<div style="width: 70vw; height: 90vh;">
+
+    <div fxLayoutAlign="end end" style="margin-bottom: 2%;">
+        <button mat-dialog-close style="border-radius: 10%; padding: 1%; border-color:blanchedalmond ; background-color: #ff322e; color: blanchedalmond;">X</button>
     </div>
 
-    <div fxLayoutAlign="space-around center">
-        <mat-card style=" margin-bottom: 2%; width: 40%; height: 50%;">
-            <mat-card-header>
-                <h1>Jornada Laboral</h1>
-            </mat-card-header>
-            <hr>
-            <canvas width="400 " height="400 " baseChart [data]="doughnutChartData " [labels]="doughnutChartLabels " [chartType]="doughnutChartType ">
+    <div fxLayoutAlign="center center">
+        <div>
+            <h1> Agencia Álvaro Obregón</h1>
+            <h2 fxLayoutAlign="center center">Detalle de Reporte</h2>
+        </div>
+    </div>
+    <hr>
+
+    <div style="width: 100%;">
+        <div fxLayoutAlign="space-around center">
+            <mat-card style=" margin-bottom: 2%; width: 100%; height: 50%;">
+                <mat-card-header>
+                    <h1>Histórico de Incidencias</h1>
+                </mat-card-header>
+                <canvas width="550" height="100" baseChart [datasets]="lineChartData " [labels]="lineChartLabels " [chartType]="lineChartType "></canvas>
+            </mat-card>
+        </div>
+
+        <div fxLayoutAlign="space-around">
+
+            <mat-card style=" margin-bottom: 2%; width: 40%; height: auto;">
+                <mat-card-header>
+                    <h1>Jornada Laboral</h1>
+                </mat-card-header>
+                <hr>
+                <canvas width="250 " height="250 " baseChart [data]="doughnutChartData " [labels]="doughnutChartLabels " [chartType]="doughnutChartType ">
         </canvas>
-        </mat-card>
+            </mat-card>
 
-        <mat-card style=" margin-bottom: 2%; width: 40%; height: 50%;">
-            <mat-card-header>
-                <h1>Uso de Apps No Autorizadas</h1>
-            </mat-card-header>
-            <hr>
-            <div style="display: block">
-                <canvas width="700 " height="400 " baseChart [datasets]="barChartData" [labels]="barChartLabels" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            <mat-card style=" margin-bottom: 2%; width: 40%; height: auto;">
+                <mat-card-header>
+                    <h1>Uso de Apps No Autorizadas</h1>
+                </mat-card-header>
+                <hr>
+                <div style="display: block">
+                    <canvas width="250 " height="250 " baseChart [datasets]="barChartData" [labels]="barChartLabels" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
             </canvas>
-            </div>
-        </mat-card>
+                </div>
+            </mat-card>
+        </div>
     </div>
+
 </div>
 
 <!-- <div style="width: 100%; height: 100%; margin: 1%;" fxLayoutAlign="center center">

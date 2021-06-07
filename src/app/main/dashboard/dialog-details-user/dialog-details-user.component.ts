@@ -36,32 +36,7 @@ export class DialogDetailsUserComponent implements OnInit {
     { data: [ 3, 4, 2, 5, 9, 2, 6], label: 'Total Incidencias en el día' },
   ];
 
-  public lineChartData1: ChartDataSets[] = [
-
-    { data: [5, 9, 2, 6, 3, 4, 2, ], label: 'Total Incidencias en el día' },
-  ];
-
-  public lineChartData2: ChartDataSets[] = [
-
-    { data: [ 2, 5, 9, 3, 4, 2, 6], label: 'Total Incidencias en el día' },
-  ];
-
-  public lineChartData3: ChartDataSets[] = [
-
-    { data: [ 3, 4, 2, 5, 6, 3, 4 ], label: 'Total Incidencias en el día' },
-  ];
-
-  public lineChartData4: ChartDataSets[] = [
-
-    { data: [ 3, 4, 2, 5, 9, 2, 6], label: 'Total Incidencias en el día' },
-  ];
-
-  public lineChartData5: ChartDataSets[] = [
-
-    { data: [ 3, 4, 2, 5, 2, 5, 9], label: 'Total Incidencias en el día' },
-  ];
-
-  public lineChartLabels: Label[] = ['L', 'M', 'M', 'J', 'V', 'S', 'D' ];
+  public lineChartLabels: Label[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo' ];
  
   public lineChartType: ChartType = 'line';
   
