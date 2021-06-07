@@ -25,7 +25,7 @@ h1 {
 }
 
 .h1 {
-    background: rgb(8, 120, 224);
+    background: rgb(96, 169, 238);
 }
 
 .h2 {
@@ -43,4 +43,68 @@ h1 {
 mat-progress-bar {
     height: 3vh;
     padding-left: 10%;
+}
+
+progress::-webkit-progress-bar {
+    background-color: black;
+    width: 50%;
+}
+
+progress {
+    background-color: rgb(221, 203, 203);
+    height: 3vh;
+    padding-right: 10%;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgb(221, 203, 203);
+    width: 50%;
+}
+
+.p1::-webkit-progress-value {
+    background-color: rgb(96, 169, 238);
+}
+
+.p1::-moz-progress-bar {
+    background-color: rgb(96, 169, 238);
+}
+
+.p1 {
+    color: rgb(96, 169, 238);
+}
+
+.p2::-webkit-progress-value {
+    background-color: rgb(41, 187, 41);
+}
+
+.p2::-moz-progress-bar {
+    background-color: rgb(41, 187, 41);
+}
+
+.p2 {
+    color: rgb(41, 187, 41);
+}
+
+.p3::-webkit-progress-value {
+    background-color: rgb(221, 221, 27);
+}
+
+.p3::-moz-progress-bar {
+    background-color: rgb(221, 221, 27);
+}
+
+.p3 {
+    color: rgb(221, 221, 27);
+}
+
+.p4::-webkit-progress-value {
+    background-color: rgb(204, 28, 28);
+}
+
+.p4::-moz-progress-bar {
+    background-color: rgb(204, 28, 28);
+}
+
+.p4 {
+    color: rgb(204, 28, 28);
 }
